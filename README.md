@@ -1,11 +1,7 @@
 # DWI Preprocessing and Connectome Reconstruction
-
-**Project for Lille Neuroscience & Cognition - PSI Team**
-*Pre-process and reconstruct connectomes from multimodal diffusion MRI images.*
-
 Authors: Alexis Mélot, Benoit Noemie 
 PI: Renaud Jardri, Paul Allen 
-Affiliations : Université de Lille, INSERM
+Affiliations : Université de Lille, INSERM, Lille Neuroscience&Cognition lab, PSI team
 
 ---
 
