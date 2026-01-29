@@ -30,10 +30,8 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.linkcode',
     'sphinx.ext.mathjax',
-    'sphinx_markdown_tables',
-    'sphinxarg.ext',  # argparse extension
-    'sphinxcontrib.apidoc',
-    'sphinxcontrib.bibtex',
+    'sphinx.ext.napoleon',
+    'sphinx.ext.viewcode',
 ]
 
 # Mock modules in autodoc:
