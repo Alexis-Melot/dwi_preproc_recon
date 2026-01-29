@@ -2,8 +2,6 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to dwi_preproc_recon's documentation!
-=======================================
 .. include:: ../README.md
 .. include:: links.rst
 
