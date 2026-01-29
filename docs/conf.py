@@ -10,10 +10,10 @@ from datetime import datetime
 sys.path.insert(0, os.path.abspath('../../src'))
 
 # -- Project information -----------------------------------------------------
-project = 'dwi_preproc_recon'
+project = 'DWI Preprocessing and Reconstruction'
 author = 'Tolema'
 release = '0.1.0'
-copyright = f'2021-{datetime.now().year}, {author}'
+copyright = f'2026-{datetime.now().year}, {author}'
 
 # -- General configuration ---------------------------------------------------
 
