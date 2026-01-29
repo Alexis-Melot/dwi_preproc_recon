@@ -1,7 +1,7 @@
 # DWI Preprocessing and Connectome Reconstruction
-Authors: Alexis Mélot, Benoit Noemie 
-PI: Renaud Jardri, Paul Allen 
-Affiliations : Université de Lille, INSERM, Lille Neuroscience&Cognition lab, PSI team
+-Authors: Alexis Mélot, Benoit Noemie 
+-PI: Renaud Jardri, Paul Allen 
+-Affiliations : Université de Lille, INSERM, Lille Neuroscience&Cognition lab, PSI team
 
 ---
 
