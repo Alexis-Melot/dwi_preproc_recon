@@ -1,5 +1,5 @@
 .. include:: links.rst
 
 ################
-Quiality Control
+Quality Control
 ################
