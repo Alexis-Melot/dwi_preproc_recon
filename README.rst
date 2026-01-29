@@ -5,8 +5,7 @@ DWI Preprocessing and Connectome Reconstruction
 Overview
 --------
 
-This repository provides tools and pipelines for preprocessing diffusion-weighted MRI (dMRI) data and reconstructing structural connectomes. The workflow is designed for multimodal dMRI datasets and supports advanced techniques for noise reduction, artifact correction, and connectome generation.
-
+This repository uses Synb0, QSIPrep, and QSIRecon (mainly) for preprocessing diffusion-weighted MRI (dMRI) data and reconstructing structural connectomes. 
 
 
 Features
