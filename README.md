@@ -3,6 +3,10 @@
 **Project for Lille Neuroscience & Cognition - PSI Team**
 *Pre-process and reconstruct connectomes from multimodal diffusion MRI images.*
 
+Authors: Alexis Mélot, Benoit Noemie 
+PI: Renaud Jardri, Paul Allen 
+Affiliations : Université de Lille, INSERM
+
 ---
 
 ## 📌 Overview
@@ -12,18 +16,17 @@ This repository provides tools and pipelines for preprocessing diffusion-weighte
 
 ## 🛠️ Features
 - **Preprocessing**: Denoising, motion correction, susceptibility distortion correction, and bias field correction.
-- **Reconstruction**: Tractography and connectome generation from multimodal dMRI.
-- **Modularity**: Scripts for individual steps or end-to-end pipelines.
-- **Compatibility**: Works with standard neuroimaging formats (NIfTI, BIDS).
+- **Reconstruction**: Tractography and connectome generation on pre-processed dMRI data.
+- **Modularity**: Scripts for local run or HPC run.
+- **Compatibility**: NIfTI, BIDS data format. 
 
 ---
 
 ## 📦 Installation
 
 ### Prerequisites
-- Python 3.8+
-- Required libraries: `numpy`, `nibabel`, `dipy`, `matplotlib`, `scipy`
-- Optional: `ANTs` or `FSL` for advanced preprocessing
+- Load dMRI multimodal data to 'data' folder.
+- Create and initialize conda or venv python environment from the requirements.txt file. 
 
 ### Setup
 1. Clone the repository:
