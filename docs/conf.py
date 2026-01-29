@@ -65,44 +65,6 @@ html_static_path = ['_static']
 htmlhelp_basename = 'dwi_preproc_recon_doc'
 
 
-# # Autodoc options
-# autodoc_default_options = {
-#     'members': True,
-#     'undoc-members': True,
-#     'show-inheritance': True,
-# }
-
-
-# -----------------------------------------------------------------------------
-# intersphinx
-# -----------------------------------------------------------------------------
-_python_version_str = f'{sys.version_info.major}.{sys.version_info.minor}'
-_python_doc_base = f'https://docs.python.org/{_python_version_str}'
-intersphinx_mapping = {
-    'python': (_python_doc_base, None),
-    'numpy': ('https://numpy.org/doc/stable/', None),
-    'scipy': (
-        'https://docs.scipy.org/doc/scipy/reference',
-        (None, './_intersphinx/scipy-objects.inv'),
-    ),
-    'matplotlib': (
-        'https://matplotlib.org/stable/',
-        (None, 'https://matplotlib.org/stable/objects.inv'),
-    ),
-    'pandas': ('https://pandas.pydata.org/pandas-docs/stable/', None),
-    'nibabel': ('https://nipy.org/nibabel/', None),
-    'nilearn': ('http://nilearn.github.io/stable/', None),
-    'nipype': ('https://nipype.readthedocs.io/en/latest/', None),
-}
-suppress_warnings = ['image.nonlocal_uri']
-
-# -----------------------------------------------------------------------------
-# sphinxcontrib-bibtex
-# -----------------------------------------------------------------------------
-bibtex_bibfiles = ['../qsiprep/data/boilerplate.bib']
-bibtex_style = 'unsrt'
-bibtex_reference_style = 'author_year'
-bibtex_footbibliography_header = ''
 # -----------------------------------------------------------------------------
 # Custom functions
 # -----------------------------------------------------------------------------
