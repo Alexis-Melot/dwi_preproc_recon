@@ -1,9 +1,10 @@
 #!/bin/bash
+#SBATCH --job-name=synb0qsi_sub01_fmap
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=24
 #SBATCH --mem=32G
-#SBATCH --time=10:00:00
+#SBATCH --time=02:30:00
 #SBATCH --output=/home/alexis.melot/dwi_preproc_recon/src/slurm/err/%j.txt
 #SBATCH --err=/home/alexis.melot/dwi_preproc_recon/src/slurm/err/%j.err
 
@@ -54,12 +55,12 @@ apptainer run -e \
 
 # Collect ouput b0-image and put it fmap/ folder of the participant
 mkdir -p $fmap_dir
-cp $tmp_synb0/outputs/b0_u.nii.gz $fmap_dir/b0_u.nii.gz
+cp $tmp_synb0/outputs/b0_all_topup.nii.gz $fmap_dir/sub-${participant}_ses-${session}_dir-PA_epi.nii.gz
 
 # Modify the .json sidecar for the synthetic b0 image
 PYTHONPATH=$main_dir/src/code:$PYTHONPATH python -c "from tools.utils import *; add_json_sidecar(
     '$sub_ses_dir/dwi/sub-${participant}_ses-${session}_dwi.json',
-    '$fmap_dir/b0_u.json')"
+    '$fmap_dir/sub-${participant}_ses-${session}_dir-PA_epi.json')"
 
 # Create folder for qsiprep outputs if it doesn't exist with participant subfolder
 output_dir=$main_dir/qsiprep_outputs/qsiprep_single/$tmp_dire_name

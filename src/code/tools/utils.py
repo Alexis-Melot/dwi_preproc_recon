@@ -15,15 +15,23 @@ def add_json_sidecar(dwi_json_path, fmap_json_path):
     with open(dwi_json_path, 'r') as json_file:
         dwi_json = json.load(json_file)
 
+    dwi_json['B0FieldIdentifier'] = 'synb0'
+    # Save JSON to dwi_json_path
+    with open(dwi_json_path, 'w') as json_file:
+        json.dump(dwi_json, json_file, indent=4)
+
     # Update fields
     dwi_json['PhaseEncodingDirection'] = 'i-'
     dwi_json['TotalReadoutTime'] = 0.0000001
-    dwi_json['EffectiveEchoSpacing'] = 0.0
+    dwi_json['EffectiveEchoSpacing'] = 0.000001
+    dwi_json['IntendedFor'] = 'bids::' + os.path.abspath(dwi_json_path).replace('\\', '/').split('bids/')[-1].replace('.json', '.nii.gz')
+    
 
     # Save updated JSON sidecar at new_json_path
     with open(fmap_json_path, 'w') as json_file:
         json.dump(dwi_json, json_file, indent=4)
-    print(f"Updated JSON sidecar saved at {fmap_json_path}")
+    
+    print(f"------ Updated JSON sidecars ------ ")
 
 if __name__ == "__main__":
     pass
