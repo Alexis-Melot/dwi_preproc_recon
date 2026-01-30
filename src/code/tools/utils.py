@@ -24,7 +24,7 @@ def add_json_sidecar(dwi_json_path, fmap_json_path):
     dwi_json['PhaseEncodingDirection'] = 'i-'
     dwi_json['TotalReadoutTime'] = 0.0000001
     dwi_json['EffectiveEchoSpacing'] = 0.000001
-    dwi_json['IntendedFor'] = 'bids::' + os.path.abspath(dwi_json_path).replace('\\', '/').split('bids/')[-1].replace('.json', '.nii.gz')
+    dwi_json['IntendedFor'] = os.path.abspath(dwi_json_path).replace('\\', '/').split('bids/')[-1].replace('.json', '.nii.gz')
     
 
     # Save updated JSON sidecar at new_json_path

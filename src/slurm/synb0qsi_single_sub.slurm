@@ -19,7 +19,7 @@ qsiprep_path=~/qsiprep-1.1.1.sif
 qsirecon_path=~/qsirecon-1.1.1.sif
 
 # Define participant ID
-participant=01
+participant=02
 session=pre
 
 # Define directories
