@@ -43,8 +43,8 @@ autodoc_mock_imports = [
     'seaborn',
 ]
 
-# Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+# # Add any paths that contain templates here, relative to this directory.
+# templates_path = ['_templates']
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffixes as a list of string:
