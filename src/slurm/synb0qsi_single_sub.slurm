@@ -2,9 +2,9 @@
 #SBATCH --job-name=synb0qsi_sub01_fmap_nosyn
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=24
+#SBATCH --cpus-per-task=20
 #SBATCH --mem=32G
-#SBATCH --time=02:30:00
+#SBATCH --time=03:00:00
 #SBATCH --output=/home/alexis.melot/dwi_preproc_recon/src/slurm/err/%j.txt
 #SBATCH --err=/home/alexis.melot/dwi_preproc_recon/src/slurm/err/%j.err
 
@@ -78,7 +78,7 @@ apptainer run --cleanenv --containall \
     $qsiprep_path\
     /mnt/rawdata /mnt/work/output/$participant \
     participant \
-    --n-cpus 24 --omp-nthreads 24 --mem 32000 \
+    --n-cpus 20 --omp-nthreads 20 --mem 32000 \
     --output-resolution 2 \
     --skip-bids-validation \
     --unringing-method mrdegibbs \
