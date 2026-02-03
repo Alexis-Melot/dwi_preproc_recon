@@ -1,11 +1,12 @@
 import sys
 import nibabel as nib
 
+
 def extract_b0(path_dwi, output_path_b0):
     nii_img  = nib.load(path_dwi) # load image (4D) [X,Y,Z_slice,gradient_direction]
     nii_b0 = nii_img.slicer[...,0]  # b=0 volume
     nib.save(nii_b0, output_path_b0) # save b0 image as nifti
-    print(f"Extracted b0 image saved at {output_path_b0}")
+    print(f"------ Extracted b0 image saved at {output_path_b0} ------")
 
 def add_json_sidecar(dwi_json_path, fmap_json_path):
     import json

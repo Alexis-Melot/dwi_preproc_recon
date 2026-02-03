@@ -3,3 +3,4 @@ src/slurm/err/
 synb0/
 qsiprep_outputs/
 src/code/tools/__pycache__/
+license.txt
