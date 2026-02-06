@@ -1,5 +1,5 @@
 data/
 src/slurm/err/
 synb0/
-qsiprep_outputs/
+results/
 src/code/tools/__pycache__/

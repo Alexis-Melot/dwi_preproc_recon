@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=synb0qsi_sub01_fmap_nosyn
+#SBATCH --job-name=synb0qsi_single_sub
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=20
@@ -29,7 +29,7 @@ session=pre
 main_dir=~/dwi_preproc_recon
 bids_dir=$main_dir/data/bids
 tmp_dire_name=$(date +%Y%m%d_%H%M%S)_sub-$participant
-tmp_synb0=$main_dir/synb0/$tmp_dire_name
+tmp_synb0=$main_dir/results/synb0/$tmp_dire_name
 fmap_dir=$bids_dir/sub-$participant/ses-$session/fmap
 sub_ses_dir=$bids_dir/sub-$participant/ses-$session
 
@@ -67,7 +67,7 @@ PYTHONPATH=$main_dir/src/code:$PYTHONPATH python -c "from tools.utils import *; 
     '$fmap_dir/sub-${participant}_ses-${session}_dir-PA_epi.json')"
 
 # Create folder for qsiprep outputs if it doesn't exist with participant subfolder
-output_dir=$main_dir/qsiprep_outputs/qsiprep_single/$tmp_dire_name
+output_dir=$main_dir/results/qsiprep_outputs/qsiprep_single/$tmp_dire_name
 mkdir -p $output_dir
 
 # Run qsiprep using Apptainer
@@ -75,23 +75,19 @@ apptainer run --cleanenv --containall \
     --bind $bids_dir:/mnt/rawdata \
     --bind $output_dir:/mnt/work \
     --bind /home/alexis.melot/license.txt:/mnt/license.txt \
-    $qsiprep_path\
-    /mnt/rawdata /mnt/work/output/$participant \
+    $qsiprep_path \
+    /mnt/rawdata /mnt/work/output/ \
     participant \
     --n-cpus 20 --omp-nthreads 20 --mem 32000 \
     --output-resolution 2 \
     --skip-bids-validation \
     --unringing-method mrdegibbs \
-    --work-dir /mnt/work/workdir/$participant \
+    --work-dir /mnt/work/workdir/ \
     --fs-license-file /mnt/license.txt \
     -vv \
     --participant-label $participant \
     --session-id ses-$session \
     --stop-on-first-crash
-
-
-
-    
 
 #----#
 # End time
@@ -106,4 +102,4 @@ MINUTES=$(( (DURATION % 3600) / 60 ))
 SECONDS=$((DURATION % 60))
 
 # Print duration to the output file
-echo " \n Job duration: ${HOURS}h ${MINUTES}m ${SECONDS}s" >> /home/alexis.melot/dwi_preproc_recon/src/slurm/err/${SLURM_JOB_ID}.txt
+echo "### Job duration: ${HOURS}h ${MINUTES}m ${SECONDS}s ###" >> /home/alexis.melot/dwi_preproc_recon/src/slurm/err/${SLURM_JOB_ID}.txt
